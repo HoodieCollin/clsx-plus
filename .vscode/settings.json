@@ -1,4 +1,5 @@
 {
-  "cSpell.words": ["clsx", "nonenum"],
-  "tailwindCSS.experimental.classRegex": ["tw`([^`]*)"]
+  "cSpell.words": ["clsx"],
+  "tailwindCSS.experimental.classRegex": ["tw`([^`]*)"],
+  "files.associations": { "*.json": "jsonc" }
 }

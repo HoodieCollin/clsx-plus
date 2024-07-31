@@ -3,6 +3,9 @@ import { isInlineStyles } from './inline-styles';
 import { Constants } from './types-and-constants';
 import { serializeCacheKeyValue } from './utilities';
 
+/**
+ * A simple cache that stores values based on a key and a timestamp.
+ */
 export class Cache<T extends { since: number }> {
   constructor() {}
 
@@ -12,6 +15,9 @@ export class Cache<T extends { since: number }> {
 
   private _cacheMaxAge = Infinity;
 
+  /**
+   * The maximum age of a value in the cache. If a value is older than this, they are eligible for pruning.
+   */
   get cacheMaxAge(): number {
     return this._cacheMaxAge;
   }
@@ -32,6 +38,9 @@ export class Cache<T extends { since: number }> {
 
   private _pruneInterval = Infinity;
 
+  /**
+   * The interval at which the cache is pruned. If a value is older than `cacheMaxAge`, it will be removed.
+   */
   get pruneInterval(): number {
     return this._pruneInterval;
   }
@@ -50,6 +59,9 @@ export class Cache<T extends { since: number }> {
     this.startPruner();
   }
 
+  /**
+   * Manually start the cache pruner.
+   */
   public startPruner = () => {
     if (this._intervalId) {
       console.warn('Cache pruner already running. This is a no-op.');
@@ -64,6 +76,9 @@ export class Cache<T extends { since: number }> {
     }
   };
 
+  /**
+   * Manually stop the cache pruner.
+   */
   public stopPruner = () => {
     if (this._intervalId) {
       clearInterval(this._intervalId);
@@ -71,6 +86,9 @@ export class Cache<T extends { since: number }> {
     }
   };
 
+  /**
+   * Prune the cache immediately of values that are older than `cacheMaxAge`.
+   */
   public pruneCache = () => {
     const now = Date.now();
     const maxAge = this.cacheMaxAge;
@@ -82,16 +100,36 @@ export class Cache<T extends { since: number }> {
     }
   };
 
+  /**
+   * Get a value from the cache.
+   *
+   * @param key - The key of the value to retrieve.
+   * @returns The value if it exists, otherwise `undefined`.
+   */
   public get = (key: string) => {
     return this._cache.get(key);
   };
 
+  /**
+   * Set a value in the cache.
+   *
+   * @param key - The key of the value to set
+   * @param value - The value to store in the cache.
+   */
   public set = (key: string, value: T) => {
     this._cache.set(key, value);
   };
 }
 
+/**
+ * A utility class for building cache keys from a sequence of exotic values.
+ *
+ * @internal
+ */
 export class CacheKeyBuilder {
+  /**
+   * Create a new instance of `CacheKeyBuilder`. If any values are provided, they will be added to the cache key.
+   */
   constructor(...items: any[]) {
     if (items.length) {
       this.add(items);
@@ -100,6 +138,9 @@ export class CacheKeyBuilder {
 
   private _sequence = new Set<string>();
 
+  /**
+   * Add a value to the cache key.
+   */
   public add = (value: unknown) => {
     if (isInlineStyles(value)) {
       for (const [key, inner] of value) {
@@ -149,6 +190,11 @@ export class CacheKeyBuilder {
     }
   };
 
+  /**
+   * Create the final cache key.
+   *
+   * @returns The cache key as a string.
+   */
   public finalize = () => {
     return Array.from(this._sequence).join('');
   };

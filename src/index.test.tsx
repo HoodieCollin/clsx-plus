@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 
 import { ClsxPlusFn, createClsxPlusFn } from './fn-factory';
-import tw, { CxConfig } from './index';
+import tw, { ClsxPlusConfig } from './index';
 import { DefaultIdent } from './types-and-constants';
 
 it('renders correctly', () => {
@@ -58,7 +58,7 @@ it('renders deferred values', () => {
 });
 
 it('renders deferred values with caching', () => {
-  const cfg = new CxConfig(false, false, true);
+  const cfg = new ClsxPlusConfig(false, false, true);
   cfg.DeferredValueCache.cacheMaxAge = 1000;
   cfg.DeferredValueCache.pruneInterval = 1000;
 

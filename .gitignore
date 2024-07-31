@@ -1,7 +1,5 @@
 node_modules/
 dist/
+.tmp/
 .tsbuildinfo
-*.d.ts
-*.d.ts.map
-index.js
-index.js.map
+tsdoc-metadata.json

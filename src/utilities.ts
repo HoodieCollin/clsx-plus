@@ -1,5 +1,14 @@
 import { Constants, UnsupportedValueError } from './types-and-constants';
 
+/**
+ * A utility function for joining template strings and extra values.
+ *
+ * @internal
+ *
+ * @param strings - The template strings array.
+ * @param extras - The extra values to join with the template strings.
+ * @returns The joined string.
+ */
 export function joinParts(
   strings: TemplateStringsArray,
   extras: string[]
@@ -28,6 +37,15 @@ export function joinParts(
   return className.trim();
 }
 
+/**
+ * Convert a value to a string suitable for use in a CSS declaration.
+ *
+ * @internal
+ *
+ * @param value - The value to serialize.
+ * @returns The serialized value.
+ * @throws `UnsupportedValueError` - If the value type is not supported.
+ */
 export function serializeStyleValue(value: unknown): string {
   switch (typeof value) {
     case 'string': {
@@ -67,6 +85,14 @@ export function serializeStyleValue(value: unknown): string {
   }
 }
 
+/**
+ * A utility function for serializing cache key values. This function uses `JSON.stringify` to serialize the value. If the value is a function, it will be serialized via `.toString()`.
+ *
+ * @internal
+ *
+ * @param value - The cache key value to serialize.
+ * @returns The serialized cache key value.
+ */
 export function serializeCacheKeyValue(value: unknown): string {
   return JSON.stringify(value, (_, inner) => {
     if (typeof inner === 'function') {

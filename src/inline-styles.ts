@@ -2,13 +2,18 @@ import { createCssVars, CssVars } from './css-vars';
 import { Constants, StyleDeclaration, StyleValue } from './types-and-constants';
 import { serializeStyleValue } from './utilities';
 
+/**
+ * A type that represents a collection of inline styles.
+ */
 export type InlineStyles<T extends string> = Map<string, StyleValue> & {
   [Constants.INLINE_STYLES]: true;
   [Constants.CSS_VARS]?: CssVars<T>;
 };
 
 /**
+ * Create a map of inline styles parsed from a template string. The template string should be a CSS-like syntax.
  *
+ * @internal
  */
 export function cssFn<T extends string = never>(
   strings: TemplateStringsArray,
@@ -47,6 +52,13 @@ export function cssFn<T extends string = never>(
   return inline;
 }
 
+/**
+ * A utility function for creating a map of inline styles.
+ *
+ * @internal
+ *
+ * @returns A new instance of `InlineStyles`.
+ */
 export function createInlineStyles<
   T extends string = never
 >(): InlineStyles<T> {
@@ -60,12 +72,28 @@ export function createInlineStyles<
   return ret;
 }
 
+/**
+ * A type guard that checks if a value is an `InlineStyles` object.
+ *
+ * @internal
+ *
+ * @param arg - The value to check.
+ * @returns `true` if the value is an `InlineStyles` object, otherwise `false`.
+ */
 export function isInlineStyles<T extends string>(
   arg: any
 ): arg is InlineStyles<T> {
   return arg && arg[Constants.INLINE_STYLES] === true;
 }
 
+/**
+ * Create a map of inline styles from an object.
+ *
+ * @internal
+ *
+ * @param styles - An object extending `CSSStyleDeclaration` that contains the styles to set.
+ * @returns A map of inline styles.
+ */
 export function styleDeclarationFn<T extends StyleDeclaration>(
   styles: T
 ): InlineStyles<keyof T & string> {

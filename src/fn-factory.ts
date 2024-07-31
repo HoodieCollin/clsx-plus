@@ -1,7 +1,7 @@
 import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { CacheKeyBuilder } from './cache';
-import GlobalConfig, { ClsxPlusConfigType } from './config';
+import GlobalConfig, { ClsxPlusConfig } from './config';
 import { isCssVars, varsFn } from './css-vars';
 import {
   BoundDeferredValueFn,
@@ -18,20 +18,26 @@ import {
 } from './types-and-constants';
 import { joinParts } from './utilities';
 
-/**
- * The main export of the library. It is a tag template literal function with a callback-based alternative signature.
- *
- * When using the callback-based signature, the callback will receive itself as the only argument. This allows on the fly renaming of the function without needing to adjust the import.
- *
- * @property `css` - A function that creates inline styles. Use this if you prefer to declare your inline styles using a CSS-like syntax.
- * @property `vars` - A function that creates CSS variables. Use this if you prefer to declare your CSS variables as an object.
- * @property `styles` - A function that creates inline styles. Use this if you prefer to declare your inline styles as a `CSSStyleDeclaration`.
- * @property `defer` - A function that creates a placeholder and tracks a list of arguments and a callback to be evaluated lazily. These are only recalculated if their arguments change.
- * @property `Config` - The editable configuration object for the current instance of the function.
- */
+// /**
+//  * The main export of the library. It is a tag template literal function with a callback-based alternative signature.
+//  *
+//  * When using the callback-based signature, the callback will receive itself as the only argument. This allows on the fly renaming of the function without needing to adjust the import.
+//  *
+//  * @property `css` - A function that creates inline styles. Use this if you prefer to declare your inline styles using a CSS-like syntax.
+//  * @property `vars` - A function that creates CSS variables. Use this if you prefer to declare your CSS variables as an object.
+//  * @property `styles` - A function that creates inline styles. Use this if you prefer to declare your inline styles as a `CSSStyleDeclaration`.
+//  * @property `defer` - A function that creates a placeholder and tracks a list of arguments and a callback to be evaluated lazily. These are only recalculated if their arguments change.
+//  * @property `Config` - The editable configuration object for the current instance of the function.
+//  */
 export type ClsxPlusFn<Ident extends string> = {
-  (cb: (cx: ClsxPlusFn<StringConstant<Ident>>) => ReturnValue): ReturnValue;
+  /**
+   * The tag template literal function that generates a class name string
+   */
   (strings: TemplateStringsArray, ...items: unknown[]): ReturnValue;
+  /**
+   * A callback-based alternative signature allowing for on-the-fly renaming of the function without needing to adjust the import.
+   */
+  (cb: (cx: ClsxPlusFn<StringConstant<Ident>>) => ReturnValue): ReturnValue;
   /**
    * A function that creates inline styles. Use this if you prefer to declare your inline styles using a CSS-like syntax.
    */
@@ -51,14 +57,25 @@ export type ClsxPlusFn<Ident extends string> = {
   /**
    * The editable configuration object for the current instance of the function.
    */
-  Config: ClsxPlusConfigType;
+  Config: ClsxPlusConfig;
 } & {
+  /**
+   * A reference to itself with the configured identifier as the key.
+   */
   [K in StringConstant<Ident>]: ClsxPlusFn<StringConstant<Ident>>;
 };
 
+/**
+ * Creates a new instance of the `clsxPlus` function, optionally with a custom identifier and configuration.
+ *
+ * @param ident - Override the default identifier for the function.
+ * @param configOrConfigInitFn - Provide a custom configuration or a callback that will receive a editable configuration object as it's only argument.
+ */
 export function createClsxPlusFn<Ident extends string>(
   ident?: Ident | null,
-  config: ClsxPlusConfigType = GlobalConfig
+  configOrConfigInitFn:
+    | ClsxPlusConfig
+    | ((cfg: ClsxPlusConfig) => void) = GlobalConfig
 ): ClsxPlusFn<[StringConstant<Ident>] extends [never] ? DefaultIdent : Ident> {
   type IdentArg = [StringConstant<Ident>] extends [never]
     ? DefaultIdent
@@ -66,6 +83,15 @@ export function createClsxPlusFn<Ident extends string>(
 
   if (!ident) {
     ident = Constants.DEFAULT_IDENT as Ident;
+  }
+
+  let config: ClsxPlusConfig;
+
+  if (typeof configOrConfigInitFn === 'function') {
+    config = new ClsxPlusConfig();
+    configOrConfigInitFn(config);
+  } else {
+    config = configOrConfigInitFn;
   }
 
   function processInput(strings: TemplateStringsArray, ...items: unknown[]) {
