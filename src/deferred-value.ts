@@ -1,17 +1,17 @@
 import { ClassValue } from 'clsx';
-import { CxConfigType } from './config';
+import { ClsxPlusConfigType } from './config';
 import {
   CalculationFn,
   CalculationFnMeta,
   EqualityChecker,
 } from './types-and-constants';
 
-export class DeferredValue<F extends CalculationFn = any> {
+export class DeferredValue<A extends [any, ...any[]]> {
   constructor(
-    private readonly _config: CxConfigType,
-    public readonly args: Parameters<NoInfer<F>>,
-    public readonly fn: F,
-    public readonly equalityChecker?: EqualityChecker<NoInfer<F>>
+    private readonly _config: ClsxPlusConfigType,
+    public readonly args: A,
+    public readonly fn: CalculationFn<A>,
+    public readonly equalityChecker?: EqualityChecker<CalculationFn<A>>
   ) {}
 
   call = (): ClassValue => {
@@ -25,7 +25,7 @@ export class DeferredValue<F extends CalculationFn = any> {
     const equalityChecker =
       this.equalityChecker ?? this._config.defaultEqualityChecker;
 
-    let entry: CalculationFnMeta<F> | undefined =
+    let entry: CalculationFnMeta<CalculationFn<A>> | undefined =
       this._config.DeferredValueCache.get(key);
     let ret: ClassValue;
 
@@ -42,17 +42,17 @@ export class DeferredValue<F extends CalculationFn = any> {
   };
 }
 
-export type BoundDeferredValueFn = <F extends CalculationFn>(
-  args: Parameters<NoInfer<F>>,
-  fn: F,
-  equalityChecker?: EqualityChecker<NoInfer<F>>
-) => DeferredValue<F>;
+export type BoundDeferredValueFn = <A extends [any, ...any[]]>(
+  args: A,
+  fn: CalculationFn<A>,
+  equalityChecker?: EqualityChecker<CalculationFn<A>>
+) => DeferredValue<A>;
 
-export function deferredValueFn<F extends CalculationFn>(
-  config: CxConfigType,
-  args: Parameters<NoInfer<F>>,
-  fn: F,
-  equalityChecker?: EqualityChecker<NoInfer<F>>
-): DeferredValue<F> {
+export function deferredValueFn<A extends [any, ...any[]]>(
+  config: ClsxPlusConfigType,
+  args: A,
+  fn: CalculationFn<A>,
+  equalityChecker?: EqualityChecker<CalculationFn<A>>
+): DeferredValue<A> {
   return new DeferredValue(config, args, fn, equalityChecker);
 }
