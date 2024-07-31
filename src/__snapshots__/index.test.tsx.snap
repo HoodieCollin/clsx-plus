@@ -8,11 +8,38 @@ exports[`renders correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`renders deferred values 1`] = `
+<DocumentFragment>
+  <div
+    class="w-px h-2
+             bg-green-500"
+  />
+</DocumentFragment>
+`;
+
+exports[`renders deferred values with caching 1`] = `
+<DocumentFragment>
+  <div
+    class="w-px h-2
+             bg-green-500"
+  />
+</DocumentFragment>
+`;
+
 exports[`renders inline styles 1`] = `
 <DocumentFragment>
   <div
     class="w-px h-2"
     style="color: red;"
+  />
+</DocumentFragment>
+`;
+
+exports[`renders inline styles from CSSStyleDeclaration 1`] = `
+<DocumentFragment>
+  <div
+    class="w-px h-2"
+    style="color: blue;"
   />
 </DocumentFragment>
 `;

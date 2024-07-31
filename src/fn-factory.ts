@@ -1,28 +1,75 @@
 import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { CacheKeyBuilder } from './cache';
-import GlobalConfig, { CxConfigType } from './config';
+import GlobalConfig, { ClsxPlusConfigType } from './config';
 import { isCssVars, varsFn } from './css-vars';
 import {
   BoundDeferredValueFn,
   DeferredValue,
   deferredValueFn,
 } from './deferred-value';
-import { cssFn, isInlineStyles } from './inline-styles';
-import { Constants, ReturnValue } from './types-and-constants';
+import { cssFn, isInlineStyles, styleDeclarationFn } from './inline-styles';
+import {
+  Constants,
+  DefaultIdent,
+  ReturnValue,
+  StringConstant,
+  StyleValue,
+} from './types-and-constants';
 import { joinParts } from './utilities';
 
-export interface CxFn {
+/**
+ * The main export of the library. It is a tag template literal function with a callback-based alternative signature.
+ *
+ * When using the callback-based signature, the callback will receive itself as the only argument. This allows on the fly renaming of the function without needing to adjust the import.
+ *
+ * @property `css` - A function that creates inline styles. Use this if you prefer to declare your inline styles using a CSS-like syntax.
+ * @property `vars` - A function that creates CSS variables. Use this if you prefer to declare your CSS variables as an object.
+ * @property `styles` - A function that creates inline styles. Use this if you prefer to declare your inline styles as a `CSSStyleDeclaration`.
+ * @property `defer` - A function that creates a placeholder and tracks a list of arguments and a callback to be evaluated lazily. These are only recalculated if their arguments change.
+ * @property `Config` - The editable configuration object for the current instance of the function.
+ */
+export type ClsxPlusFn<Ident extends string> = {
+  (cb: (cx: ClsxPlusFn<StringConstant<Ident>>) => ReturnValue): ReturnValue;
   (strings: TemplateStringsArray, ...items: unknown[]): ReturnValue;
+  /**
+   * A function that creates inline styles. Use this if you prefer to declare your inline styles using a CSS-like syntax.
+   */
   css: typeof cssFn;
-  defer: BoundDeferredValueFn;
+  /**
+   * A function that creates CSS variables. Use this if you prefer to declare your CSS variables as an `object`.
+   */
   vars: typeof varsFn;
-  Config: CxConfigType;
-}
+  /**
+   * A function that creates inline styles. Use this if you prefer to declare your inline styles as a `CSSStyleDeclaration`.
+   */
+  styles: typeof styleDeclarationFn;
+  /**
+   * A function that creates a placeholder and tracks a list of arguments and a callback to be evaluated lazily. These are only recalculated if their arguments change.
+   */
+  defer: BoundDeferredValueFn;
+  /**
+   * The editable configuration object for the current instance of the function.
+   */
+  Config: ClsxPlusConfigType;
+} & {
+  [K in StringConstant<Ident>]: ClsxPlusFn<StringConstant<Ident>>;
+};
 
-export function createCxFn(config: CxConfigType = GlobalConfig): CxFn {
+export function createClsxPlusFn<Ident extends string>(
+  ident?: Ident | null,
+  config: ClsxPlusConfigType = GlobalConfig
+): ClsxPlusFn<[StringConstant<Ident>] extends [never] ? DefaultIdent : Ident> {
+  type IdentArg = [StringConstant<Ident>] extends [never]
+    ? DefaultIdent
+    : Ident;
+
+  if (!ident) {
+    ident = Constants.DEFAULT_IDENT as Ident;
+  }
+
   function processInput(strings: TemplateStringsArray, ...items: unknown[]) {
-    const style: Map<string, string> = new Map();
+    const style: Map<string, StyleValue> = new Map();
     const extra: string[] = [];
 
     for (let item of items) {
@@ -77,7 +124,7 @@ export function createCxFn(config: CxConfigType = GlobalConfig): CxFn {
     }) as ReturnValue;
   }
 
-  const cxFn = function cx(
+  function taggedTemplateHandler(
     strings: TemplateStringsArray,
     ...items: unknown[]
   ): ReturnValue {
@@ -100,12 +147,39 @@ export function createCxFn(config: CxConfigType = GlobalConfig): CxFn {
     config.ReturnValueCache.set(cacheKey, entry);
 
     return ret;
-  } as CxFn;
+  }
 
-  return Object.defineProperties(cxFn, {
+  function callbackArgumentHandler(
+    cb: (fn: ClsxPlusFn<IdentArg>) => ReturnValue
+  ): ReturnValue {
+    return cb(fn);
+  }
+
+  const fn = function ClsxPlusFn(...args: unknown[]): ReturnValue {
+    if (args.length === 1 && typeof args[0] === 'function') {
+      return callbackArgumentHandler(
+        args[0] as (cx: ClsxPlusFn<IdentArg>) => ReturnValue
+      );
+    }
+
+    const [strings, ...values] = args;
+
+    if (!Array.isArray(strings) || 'raw' in strings === false) {
+      throw new Error(
+        `\`${ident}\` must be used as a template literal tag or as a higher-order function.`
+      );
+    }
+
+    return taggedTemplateHandler(strings as TemplateStringsArray, ...values);
+  } as ClsxPlusFn<IdentArg>;
+
+  return Object.defineProperties(fn, {
+    name: { value: ident },
+    [ident]: { value: fn },
     css: { value: cssFn },
-    defer: { value: deferredValueFn.bind(cxFn, config) },
     vars: { value: varsFn },
+    styles: { value: styleDeclarationFn },
+    defer: { value: deferredValueFn.bind(fn, config) },
     Config: { value: config },
   });
 }

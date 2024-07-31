@@ -1,8 +1,8 @@
 import { createCssVars, CssVars } from './css-vars';
-import { Constants } from './types-and-constants';
+import { Constants, StyleDeclaration, StyleValue } from './types-and-constants';
 import { serializeStyleValue } from './utilities';
 
-export type InlineStyles<T extends string> = Map<string, string> & {
+export type InlineStyles<T extends string> = Map<string, StyleValue> & {
   [Constants.INLINE_STYLES]: true;
   [Constants.CSS_VARS]?: CssVars<T>;
 };
@@ -64,4 +64,16 @@ export function isInlineStyles<T extends string>(
   arg: any
 ): arg is InlineStyles<T> {
   return arg && arg[Constants.INLINE_STYLES] === true;
+}
+
+export function styleDeclarationFn<T extends StyleDeclaration>(
+  styles: T
+): InlineStyles<keyof T & string> {
+  const ret = createInlineStyles<keyof T & string>();
+
+  for (const key in styles) {
+    ret.set(key, styles[key] as any);
+  }
+
+  return ret;
 }

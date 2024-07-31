@@ -2,7 +2,7 @@ import { isEqual } from 'lodash';
 import { Cache } from './cache';
 import { CalculationFnMeta, ReturnValueMeta } from './types-and-constants';
 
-export class CxConfig {
+export class ClsxPlusConfig {
   constructor(
     public enableTailwindMerge = false,
     public enableReturnValueCache = false,
@@ -15,8 +15,8 @@ export class CxConfig {
   public readonly DeferredValueCache = new Cache<CalculationFnMeta>();
 }
 
-export type CxConfigType = InstanceType<typeof CxConfig>;
+export type ClsxPlusConfigType = InstanceType<typeof ClsxPlusConfig>;
 
-export const GlobalCxConfig = new CxConfig();
+export const GlobalClsxPlusConfig = new ClsxPlusConfig();
 
-export default GlobalCxConfig;
+export default GlobalClsxPlusConfig;
