@@ -33,12 +33,12 @@
   "propertiesFormat": "htmlTable",
   "propertyMembersFormat": "htmlTable",
   "typeDeclarationFormat": "htmlTable",
-  "frontmatterGlobals": {
-    "layout": "docs",
-    "sidebar": true
-  },
-  "indexFrontmatter": {
-    "onIndex": "true"
-  },
+  // "frontmatterGlobals": {
+  //   "layout": "docs",
+  //   "sidebar": true
+  // },
+  // "indexFrontmatter": {
+  //   "onIndex": "true"
+  // },
   "remarkPlugins": ["unified-prettier", "remark-toc", "remark-github"]
 }
