@@ -8,6 +8,8 @@ import {
 
 /**
  * A class that represents a deferred value. This is used to cache the return value of a calculation function.
+ *
+ * @category Implementation Details
  */
 export class DeferredValue<A extends [any, ...any[]]> {
   /**
@@ -30,7 +32,7 @@ export class DeferredValue<A extends [any, ...any[]]> {
    * @returns The return value of the calculation function
    */
   call = (): ClassValue => {
-    if (!this._config.enableDeferredValueCache) {
+    if (!this._config.deferredValueCacheEnabled) {
       return this.fn(...this.args);
     }
 
@@ -60,6 +62,7 @@ export class DeferredValue<A extends [any, ...any[]]> {
 /**
  * A function that creates a new instance of the `DeferredValue` class with `config` already bound.
  *
+ * @category Types and Constants
  * @template A - The argument to pass to the calculation function
  */
 export type BoundDeferredValueFn = <A extends [any, ...any[]]>(
@@ -72,6 +75,7 @@ export type BoundDeferredValueFn = <A extends [any, ...any[]]>(
  * Creates a new instance of the `DeferredValue` class.
  *
  * @internal
+ * @category Implementation Details
  *
  * @param config - The configuration object containing the cache and other settings
  * @param args - The arguments to pass to the calculation function

@@ -3,6 +3,7 @@ import { Constants, StyleValue } from './types-and-constants';
 /**
  * A type that represents a collection of CSS variables. The keys should _**NOT**_ include the `--` prefix _(it will be added automatically)_.
  *
+ * @category Types and Constants
  * @template T - The keys of the CSS variables.
  */
 export type CssVars<T extends string> = [T] extends [never]
@@ -13,6 +14,7 @@ export type CssVars<T extends string> = [T] extends [never]
  * Create a map of CSS variables from an object.
  *
  * @internal
+ * @category Implementation Details
  *
  * @param arg - An object containing the CSS variables to set.
  * @returns A map of CSS variables.
@@ -36,6 +38,7 @@ export function varsFn<T extends string>(
  * A utility function for creating a map of CSS variables.
  *
  * @internal
+ * @category Implementation Details
  *
  * @returns A map of CSS variables.
  */
@@ -54,6 +57,7 @@ export function createCssVars<T extends string = never>(): CssVars<T> {
  * A type guard that checks if a value is a `CssVars` object.
  *
  * @internal
+ * @category Implementation Details
  *
  * @param arg - The value to check.
  * @returns `true` if the value is a `CssVars` object, otherwise `false`.

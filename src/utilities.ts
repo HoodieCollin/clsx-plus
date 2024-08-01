@@ -4,6 +4,7 @@ import { Constants, UnsupportedValueError } from './types-and-constants';
  * A utility function for joining template strings and extra values.
  *
  * @internal
+ * @category Implementation Details
  *
  * @param strings - The template strings array.
  * @param extras - The extra values to join with the template strings.
@@ -41,6 +42,7 @@ export function joinParts(
  * Convert a value to a string suitable for use in a CSS declaration.
  *
  * @internal
+ * @category Implementation Details
  *
  * @param value - The value to serialize.
  * @returns The serialized value.
@@ -89,6 +91,7 @@ export function serializeStyleValue(value: unknown): string {
  * A utility function for serializing cache key values. This function uses `JSON.stringify` to serialize the value. If the value is a function, it will be serialized via `.toString()`.
  *
  * @internal
+ * @category Implementation Details
  *
  * @param value - The cache key value to serialize.
  * @returns The serialized cache key value.

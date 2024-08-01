@@ -14,3 +14,6 @@ build: src/*.ts pnpm-lock.yaml tsconfig.json tsconfig.build.json
 	--target=chrome119,firefox115,safari17,edge119 \
 	--packages=external \
 	--outfile=dist/index.js --allow-overwrite
+
+generate-gh-docs: 
+	pnpm typedoc

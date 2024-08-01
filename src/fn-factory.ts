@@ -18,17 +18,18 @@ import {
 } from './types-and-constants';
 import { joinParts } from './utilities';
 
-// /**
-//  * The main export of the library. It is a tag template literal function with a callback-based alternative signature.
-//  *
-//  * When using the callback-based signature, the callback will receive itself as the only argument. This allows on the fly renaming of the function without needing to adjust the import.
-//  *
-//  * @property `css` - A function that creates inline styles. Use this if you prefer to declare your inline styles using a CSS-like syntax.
-//  * @property `vars` - A function that creates CSS variables. Use this if you prefer to declare your CSS variables as an object.
-//  * @property `styles` - A function that creates inline styles. Use this if you prefer to declare your inline styles as a `CSSStyleDeclaration`.
-//  * @property `defer` - A function that creates a placeholder and tracks a list of arguments and a callback to be evaluated lazily. These are only recalculated if their arguments change.
-//  * @property `Config` - The editable configuration object for the current instance of the function.
-//  */
+/**
+ * The main export of the library. It is a tag template literal function with a callback-based alternative signature.
+ *
+ * When using the callback-based signature, the callback will receive itself as the only argument. This allows on the fly renaming of the function without needing to adjust the import.
+ *
+ * @category Types and Constants
+ * @property `css` - A function that creates inline styles. Use this if you prefer to declare your inline styles using a CSS-like syntax.
+ * @property `vars` - A function that creates CSS variables. Use this if you prefer to declare your CSS variables as an object.
+ * @property `styles` - A function that creates inline styles. Use this if you prefer to declare your inline styles as a `CSSStyleDeclaration`.
+ * @property `defer` - A function that creates a placeholder and tracks a list of arguments and a callback to be evaluated lazily. These are only recalculated if their arguments change.
+ * @property `Config` - The editable configuration object for the current instance of the function.
+ */
 export type ClsxPlusFn<Ident extends string> = {
   /**
    * The tag template literal function that generates a class name string
@@ -68,8 +69,11 @@ export type ClsxPlusFn<Ident extends string> = {
 /**
  * Creates a new instance of the `clsxPlus` function, optionally with a custom identifier and configuration.
  *
+ * @category Secondary Entry Points
+ *
  * @param ident - Override the default identifier for the function.
  * @param configOrConfigInitFn - Provide a custom configuration or a callback that will receive a editable configuration object as it's only argument.
+ * @returns A new instance of the `clsxPlus` function.
  */
 export function createClsxPlusFn<Ident extends string>(
   ident?: Ident | null,
@@ -132,7 +136,7 @@ export function createClsxPlusFn<Ident extends string>(
 
     let className = joinParts(strings, extra);
 
-    if (config.enableTailwindMerge) {
+    if (config.tailwindMergeEnabled) {
       className = twMerge(className);
     }
 
@@ -154,7 +158,7 @@ export function createClsxPlusFn<Ident extends string>(
     strings: TemplateStringsArray,
     ...items: unknown[]
   ): ReturnValue {
-    if (!config.enableReturnValueCache) {
+    if (!config.returnValueCacheEnabled) {
       return processInput(strings, ...items);
     }
 

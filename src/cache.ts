@@ -5,6 +5,8 @@ import { serializeCacheKeyValue } from './utilities';
 
 /**
  * A simple cache that stores values based on a key and a timestamp.
+ *
+ * @category Implementation Details
  */
 export class Cache<T extends { since: number }> {
   constructor() {}
@@ -125,6 +127,7 @@ export class Cache<T extends { since: number }> {
  * A utility class for building cache keys from a sequence of exotic values.
  *
  * @internal
+ * @category Implementation Details
  */
 export class CacheKeyBuilder {
   /**

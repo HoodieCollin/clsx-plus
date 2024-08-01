@@ -58,9 +58,9 @@ it('renders deferred values', () => {
 });
 
 it('renders deferred values with caching', () => {
-  const cfg = new ClsxPlusConfig(false, false, true);
-  cfg.DeferredValueCache.cacheMaxAge = 1000;
-  cfg.DeferredValueCache.pruneInterval = 1000;
+  const cfg = new ClsxPlusConfig({
+    deferredValueCache: true,
+  });
 
   const tw = createClsxPlusFn(null, cfg);
 

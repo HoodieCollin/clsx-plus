@@ -1,11 +1,44 @@
 {
-  "$schema": "https://typedoc.org/schema.json",
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
   "entryPoints": ["./src/index.ts"],
+  "cleanOutputDir": true,
   "out": "docs",
+  "plugin": [
+    "typedoc-plugin-markdown",
+    "typedoc-plugin-rename-defaults",
+    "typedoc-plugin-frontmatter",
+    "typedoc-plugin-remark"
+  ],
   "navigation": {
     "includeCategories": true,
     "includeGroups": false,
-    "includeFolders": true
+    "includeFolders": false
   },
-  "categorizeByGroup": false
+  "categorizeByGroup": false,
+  "categoryOrder": [
+    "Main Entry Point",
+    "Secondary Entry Points",
+    "React Hooks",
+    "Variables",
+    "Types and Constants",
+    "*"
+  ],
+  "useCodeBlocks": true,
+  "flattenOutputFiles": true,
+  "indexFormat": "table",
+  "parametersFormat": "htmlTable",
+  "interfacePropertiesFormat": "htmlTable",
+  "classPropertiesFormat": "htmlTable",
+  "enumMembersFormat": "htmlTable",
+  "propertiesFormat": "htmlTable",
+  "propertyMembersFormat": "htmlTable",
+  "typeDeclarationFormat": "htmlTable",
+  "frontmatterGlobals": {
+    "layout": "docs",
+    "sidebar": true
+  },
+  "indexFrontmatter": {
+    "onIndex": "true"
+  },
+  "remarkPlugins": ["unified-prettier", "remark-toc", "remark-github"]
 }

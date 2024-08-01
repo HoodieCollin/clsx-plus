@@ -1,9 +1,3 @@
-/**
- * The types and constants used throughout the library.
- *
- * @module
- */
-
 import { ClassValue } from 'clsx';
 import { CssVars } from './css-vars';
 import { InlineStyles } from './inline-styles';
@@ -11,6 +5,7 @@ import { InlineStyles } from './inline-styles';
 /**
  * Constants used throughout the library.
  * @internal
+ * @category Types and Constants
  */
 export namespace Constants {
   /**
@@ -51,6 +46,7 @@ export namespace Constants {
  * - If it is declared as anything else, it will equal `never`.
  *
  * @internal
+ * @category Types and Constants
  */
 export type DefaultIdent = [
   Extract<typeof process.env.CLSX_PLUS_DEFAULT_FN_IDENT, undefined>
@@ -60,11 +56,15 @@ export type DefaultIdent = [
 
 /**
  * A type that represents a CSS value.
+ *
+ * @category Types and Constants
  */
 export type StyleValue = string | number | boolean | null | undefined;
 
 /**
  * A more flexible type for defining CSS styles.
+ *
+ * @category Types and Constants
  */
 export type StyleDeclaration = {
   [K in string & keyof CSSStyleDeclaration]?: StyleValue;
@@ -72,11 +72,15 @@ export type StyleDeclaration = {
 
 /**
  * An error type that is thrown when a value is not supported.
+ *
+ * @category Types and Constants
  */
 export type UnsupportedValueError = Error & { value: any };
 
 /**
  * A type that represents the return value of a `clsxPlus` function.
+ *
+ * @category Types and Constants
  */
 export interface ReturnValue {
   (): string;
@@ -89,6 +93,7 @@ export interface ReturnValue {
  * A type that represents the return value of a `clsxPlus` function used in the return value cache.
  *
  * @internal
+ * @category Types and Constants
  */
 export type ReturnValueMeta = {
   since: number;
@@ -97,6 +102,8 @@ export type ReturnValueMeta = {
 
 /**
  * A function that calculates a value based on the provided arguments.
+ *
+ * @category Types and Constants
  */
 export type CalculationFn<A extends [any, ...any[]] = any> = (
   ...args: A
@@ -106,6 +113,7 @@ export type CalculationFn<A extends [any, ...any[]] = any> = (
  * Metadata for a calculation function used in the deferred value cache.
  *
  * @internal
+ * @category Types and Constants
  */
 export type CalculationFnMeta<F extends CalculationFn = any> = {
   since: number;
@@ -115,6 +123,8 @@ export type CalculationFnMeta<F extends CalculationFn = any> = {
 
 /**
  * A function that checks if the arguments of a calculation function have changed.
+ *
+ * @category Types and Constants
  */
 export type EqualityChecker<F extends CalculationFn = any> = (
   old: Parameters<F>,
@@ -127,6 +137,7 @@ export type EqualityChecker<F extends CalculationFn = any> = (
  * credit to [jcalz](https://stackoverflow.com/users/2887218/jcalz)
  *
  * @internal
+ * @category Types and Constants
  */
 export type UnionToIntersection<U> = (
   U extends any ? (x: U) => void : never
@@ -138,6 +149,7 @@ export type UnionToIntersection<U> = (
  * A type that ensures the input is an _exact_ string constant. Union types will result in `never`.
  *
  * @internal
+ * @category Types and Constants
  */
 export type StringConstant<Str> = [UnionToIntersection<Str>] extends [never]
   ? never
