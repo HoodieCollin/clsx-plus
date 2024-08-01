@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -36,4 +31,4 @@ When using the callback-based signature, the callback will receive itself as the
 
 ## Defined in
 
-[src/fn-factory.ts:33](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/fn-factory.ts#L33)
+[src/fn-factory.ts:33](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/fn-factory.ts#L33)

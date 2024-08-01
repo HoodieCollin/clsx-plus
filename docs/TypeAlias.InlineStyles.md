@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -38,7 +33,7 @@ A type that represents a collection of inline styles.
 </td>
 <td>
 
-[src/inline-styles.ts:12](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/inline-styles.ts#L12)
+[src/inline-styles.ts:12](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/inline-styles.ts#L12)
 
 </td>
 </tr>
@@ -55,7 +50,7 @@ A type that represents a collection of inline styles.
 </td>
 <td>
 
-[src/inline-styles.ts:11](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/inline-styles.ts#L11)
+[src/inline-styles.ts:11](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/inline-styles.ts#L11)
 
 </td>
 </tr>
@@ -78,4 +73,4 @@ A type that represents a collection of inline styles.
 
 ## Defined in
 
-[src/inline-styles.ts:10](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/inline-styles.ts#L10)
+[src/inline-styles.ts:10](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/inline-styles.ts#L10)

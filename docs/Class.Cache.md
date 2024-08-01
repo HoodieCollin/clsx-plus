@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -77,7 +72,7 @@ new Cache<T>(): Cache<T>
 
 #### Defined in
 
-[src/cache.ts:12](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L12)
+[src/cache.ts:12](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L12)
 
 ## Accessors
 
@@ -120,7 +115,7 @@ set cacheMaxAge(value): void
 
 #### Defined in
 
-[src/cache.ts:23](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L23)
+[src/cache.ts:23](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L23)
 
 ---
 
@@ -163,7 +158,7 @@ set pruneInterval(value): void
 
 #### Defined in
 
-[src/cache.ts:46](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L46)
+[src/cache.ts:46](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L46)
 
 ## Methods
 
@@ -210,7 +205,7 @@ The value if it exists, otherwise `undefined`.
 
 #### Defined in
 
-[src/cache.ts:111](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L111)
+[src/cache.ts:111](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L111)
 
 ---
 
@@ -228,7 +223,7 @@ Prune the cache immediately of values that are older than `cacheMaxAge`.
 
 #### Defined in
 
-[src/cache.ts:94](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L94)
+[src/cache.ts:94](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L94)
 
 ---
 
@@ -290,7 +285,7 @@ The value to store in the cache.
 
 #### Defined in
 
-[src/cache.ts:121](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L121)
+[src/cache.ts:121](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L121)
 
 ---
 
@@ -308,7 +303,7 @@ Manually start the cache pruner.
 
 #### Defined in
 
-[src/cache.ts:67](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L67)
+[src/cache.ts:67](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L67)
 
 ---
 
@@ -326,4 +321,4 @@ Manually stop the cache pruner.
 
 #### Defined in
 
-[src/cache.ts:84](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L84)
+[src/cache.ts:84](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L84)

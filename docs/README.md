@@ -1,9 +1,3 @@
----
-layout: docs
-sidebar: true
-onIndex: "true"
----
-
 **clsx-plus** • **Docs**
 
 ---

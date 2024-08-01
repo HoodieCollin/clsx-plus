@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -68,7 +63,7 @@ Create a new instance of `CacheKeyBuilder`. If any values are provided, they wil
 
 #### Defined in
 
-[src/cache.ts:136](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L136)
+[src/cache.ts:136](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L136)
 
 ## Methods
 
@@ -107,7 +102,7 @@ Add a value to the cache key.
 
 #### Defined in
 
-[src/cache.ts:147](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L147)
+[src/cache.ts:147](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L147)
 
 ---
 
@@ -127,4 +122,4 @@ The cache key as a string.
 
 #### Defined in
 
-[src/cache.ts:201](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/cache.ts#L201)
+[src/cache.ts:201](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/cache.ts#L201)

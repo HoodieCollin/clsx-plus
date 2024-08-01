@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -40,4 +35,4 @@ The keys of the CSS variables.
 
 ## Defined in
 
-[src/css-vars.ts:9](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/css-vars.ts#L9)
+[src/css-vars.ts:9](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/css-vars.ts#L9)

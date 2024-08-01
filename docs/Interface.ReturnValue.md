@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -35,7 +30,7 @@ A type that represents the return value of a `clsxPlus` function.
 
 ## Defined in
 
-[src/types-and-constants.ts:86](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/types-and-constants.ts#L86)
+[src/types-and-constants.ts:86](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/types-and-constants.ts#L86)
 
 ## Properties
 
@@ -58,7 +53,7 @@ A type that represents the return value of a `clsxPlus` function.
 </td>
 <td>
 
-[src/types-and-constants.ts:88](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/types-and-constants.ts#L88)
+[src/types-and-constants.ts:88](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/types-and-constants.ts#L88)
 
 </td>
 </tr>
@@ -75,7 +70,7 @@ A type that represents the return value of a `clsxPlus` function.
 </td>
 <td>
 
-[src/types-and-constants.ts:89](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/types-and-constants.ts#L89)
+[src/types-and-constants.ts:89](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/types-and-constants.ts#L89)
 
 </td>
 </tr>
@@ -95,4 +90,4 @@ toString(): string
 
 #### Defined in
 
-[src/types-and-constants.ts:87](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/types-and-constants.ts#L87)
+[src/types-and-constants.ts:87](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/types-and-constants.ts#L87)

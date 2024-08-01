@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -89,4 +84,4 @@ The argument to pass to the calculation function
 
 ## Defined in
 
-[src/deferred-value.ts:68](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/deferred-value.ts#L68)
+[src/deferred-value.ts:68](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/deferred-value.ts#L68)

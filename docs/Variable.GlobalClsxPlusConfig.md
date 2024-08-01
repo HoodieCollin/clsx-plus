@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -19,4 +14,4 @@ The global configuration object for the `clsxPlus` function. This is used as the
 
 ## Defined in
 
-[src/config.ts:74](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/config.ts#L74)
+[src/config.ts:74](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/config.ts#L74)

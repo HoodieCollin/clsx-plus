@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -126,7 +121,7 @@ deferredValueFn
 
 #### Defined in
 
-[src/deferred-value.ts:22](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/deferred-value.ts#L22)
+[src/deferred-value.ts:22](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/deferred-value.ts#L22)
 
 ## Properties
 
@@ -155,7 +150,7 @@ deferredValueFn
 </td>
 <td>
 
-[src/deferred-value.ts:24](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/deferred-value.ts#L24)
+[src/deferred-value.ts:24](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/deferred-value.ts#L24)
 
 </td>
 </tr>
@@ -177,7 +172,7 @@ deferredValueFn
 </td>
 <td>
 
-[src/deferred-value.ts:26](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/deferred-value.ts#L26)
+[src/deferred-value.ts:26](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/deferred-value.ts#L26)
 
 </td>
 </tr>
@@ -199,7 +194,7 @@ deferredValueFn
 </td>
 <td>
 
-[src/deferred-value.ts:25](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/deferred-value.ts#L25)
+[src/deferred-value.ts:25](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/deferred-value.ts#L25)
 
 </td>
 </tr>
@@ -223,4 +218,4 @@ The return value of the calculation function
 
 #### Defined in
 
-[src/deferred-value.ts:34](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/deferred-value.ts#L34)
+[src/deferred-value.ts:34](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/deferred-value.ts#L34)

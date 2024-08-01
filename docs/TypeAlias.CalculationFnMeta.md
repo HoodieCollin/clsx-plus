@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -61,7 +56,7 @@ Metadata for a calculation function used in the deferred value cache.
 </td>
 <td>
 
-[src/types-and-constants.ts:120](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/types-and-constants.ts#L120)
+[src/types-and-constants.ts:120](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/types-and-constants.ts#L120)
 
 </td>
 </tr>
@@ -78,7 +73,7 @@ Metadata for a calculation function used in the deferred value cache.
 </td>
 <td>
 
-[src/types-and-constants.ts:121](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/types-and-constants.ts#L121)
+[src/types-and-constants.ts:121](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/types-and-constants.ts#L121)
 
 </td>
 </tr>
@@ -95,7 +90,7 @@ Metadata for a calculation function used in the deferred value cache.
 </td>
 <td>
 
-[src/types-and-constants.ts:119](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/types-and-constants.ts#L119)
+[src/types-and-constants.ts:119](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/types-and-constants.ts#L119)
 
 </td>
 </tr>
@@ -103,4 +98,4 @@ Metadata for a calculation function used in the deferred value cache.
 
 ## Defined in
 
-[src/types-and-constants.ts:118](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/types-and-constants.ts#L118)
+[src/types-and-constants.ts:118](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/types-and-constants.ts#L118)

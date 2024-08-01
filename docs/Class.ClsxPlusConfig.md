@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -119,7 +114,7 @@ object === other;
 
 #### Defined in
 
-[src/config.ts:12](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/config.ts#L12)
+[src/config.ts:12](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/config.ts#L12)
 
 ## Other
 
@@ -204,7 +199,7 @@ new ClsxPlusConfig(__namedParameters): ClsxPlusConfig
 
 #### Defined in
 
-[src/config.ts:16](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/config.ts#L16)
+[src/config.ts:16](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/config.ts#L16)
 
 ---
 
@@ -218,7 +213,7 @@ A cache for the deferred values of the `clsxPlus` function.
 
 #### Defined in
 
-[src/config.ts:66](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/config.ts#L66)
+[src/config.ts:66](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/config.ts#L66)
 
 ---
 
@@ -232,7 +227,7 @@ A cache for the return values of the `clsxPlus` function.
 
 #### Defined in
 
-[src/config.ts:61](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/config.ts#L61)
+[src/config.ts:61](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/config.ts#L61)
 
 ---
 
@@ -244,7 +239,7 @@ deferredValueCacheEnabled: boolean = false;
 
 #### Defined in
 
-[src/config.ts:14](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/config.ts#L14)
+[src/config.ts:14](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/config.ts#L14)
 
 ---
 
@@ -256,7 +251,7 @@ returnValueCacheEnabled: boolean = false;
 
 #### Defined in
 
-[src/config.ts:13](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/config.ts#L13)
+[src/config.ts:13](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/config.ts#L13)
 
 ---
 
@@ -268,4 +263,4 @@ tailwindMergeEnabled: boolean = false;
 
 #### Defined in
 
-[src/config.ts:11](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/config.ts#L11)
+[src/config.ts:11](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/config.ts#L11)

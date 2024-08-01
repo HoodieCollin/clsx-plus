@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -161,4 +156,4 @@ an instance of the `clsxPlus` function with a separate cache that is automatical
 
 ## Defined in
 
-[src/index.ts:123](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/index.ts#L123)
+[src/index.ts:123](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/index.ts#L123)

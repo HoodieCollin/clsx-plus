@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -125,4 +120,4 @@ A new instance of the `DeferredValue` class
 
 ## Defined in
 
-[src/deferred-value.ts:86](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/deferred-value.ts#L86)
+[src/deferred-value.ts:86](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/deferred-value.ts#L86)

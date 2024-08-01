@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -38,4 +33,4 @@ credit to [jcalz](https://stackoverflow.com/users/2887218/jcalz)
 
 ## Defined in
 
-[src/types-and-constants.ts:142](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/types-and-constants.ts#L142)
+[src/types-and-constants.ts:142](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/types-and-constants.ts#L142)

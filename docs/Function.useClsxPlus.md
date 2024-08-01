@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -100,5 +95,5 @@ const MyConfig = new ClsxPlusConfig(true);
 
 ## Defined in
 
-[src/index.ts:95](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/index.ts#L95)
+[src/index.ts:95](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/index.ts#L95)
 ```

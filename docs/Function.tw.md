@@ -1,8 +1,3 @@
----
-layout: docs
-sidebar: true
----
-
 [**clsx-plus**](README.md) • **Docs**
 
 ---
@@ -80,7 +75,7 @@ export function MyComponent() {
 
 ### Defined in
 
-[src/index.ts:73](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/index.ts#L73)
+[src/index.ts:73](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/index.ts#L73)
 
 ## tw(cb)
 
@@ -127,4 +122,4 @@ export function MyComponent() {
 
 ### Defined in
 
-[src/index.ts:73](https://github.com/HoodieCollin/clsx-plus/blob/6e1806c1d3df5a0086bcfb605a74045d54bc746a/src/index.ts#L73)
+[src/index.ts:73](https://github.com/HoodieCollin/clsx-plus/blob/4d55252443bab37590ad84a6e45f55cb4343cd0f/src/index.ts#L73)
